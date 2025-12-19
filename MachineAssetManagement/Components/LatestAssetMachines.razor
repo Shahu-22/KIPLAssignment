@@ -1,0 +1,22 @@
+﻿@page "/latest-series"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+@inject IMachineService MachineService
+<h3>Latest Asset Using Machines</h3>
+
+@if (machines != null)
+{
+    <ul>
+        @foreach(string machine in @machines){
+            <li>@machine</li>
+        }
+    </ul>
+}
+
+@code {
+    protected IEnumerable<string>? machines;
+    protected override void OnInitialized()
+    {
+        machines = MachineService.GetMachineWithLatestAsset();
+    }
+}

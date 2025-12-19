@@ -1,0 +1,38 @@
+﻿@page "/assets"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+
+@inject IAssetService AssetService
+
+<h3>Machines By Assets</h3>
+
+<input @bind="assetName" placeholder="Enter asset name " />
+<button @onclick="LoadAssets">Get Assets</button>
+
+@if (machines != null)
+{
+    if (!machines.Any())
+    {
+        <p>No machine found.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var machine in machines)
+            {
+                <li>@machine</li>
+            }
+        </ul>
+    }
+}
+
+@code {
+    private string assetName = string.Empty;
+    private List<string>? machines;
+
+    private void LoadAssets()
+    {
+        machines = AssetService.GetMachinesByAsset(assetName);
+    }
+}
+
