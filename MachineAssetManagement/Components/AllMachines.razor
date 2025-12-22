@@ -1,0 +1,161 @@
+﻿@page "/all-machines"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+@using MachineAssetManagement.Models
+@inject IMachineService MachineService
+@inject NavigationManager Navigation
+
+<div class="page-container">
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">All Machines & Assets</h3>
+
+            <button type="button" class="btn btn-primary" @onclick="FileUpload">
+                Upload New Data
+            </button>
+        </div>
+
+        <div class="card-body">
+
+            @if (machines == null)
+            {
+                <p class="status-text">Loading...</p>
+            }
+            else if (!machines.Any())
+            {
+                <p class="status-text">No machines found.</p>
+            }
+            else
+            {
+                <div class="table-wrapper">
+                    <table class="machine-table">
+                        <thead>
+                            <tr>
+                                <th>Machine Name</th>
+                                <th>Asset</th>
+                                <th>Series</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var machine in machines)
+                            {
+                                var rowSpan = machine.AssetUsage.Count;
+                                bool first = true;
+
+                                foreach (var usage in machine.AssetUsage)
+                                {
+                                    <tr>
+                                        @if (first)
+                                        {
+                                            <td rowspan="@rowSpan" class="machine-cell">
+                                                @machine.Name
+                                            </td>
+                                            first = false;
+                                        }
+                                        <td class="asset-cell">@usage.Asset.Name</td>
+                                        <td class="series-cell">@usage.Series</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    /* Card */
+    .card {
+        border: 1px solid #d0d0d0;
+        border-radius: 8px;
+        background-color: #ffffff;
+    }
+
+    .card-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid #d0d0d0;
+        background-color: #f4f6f8;
+    }
+
+        .card-header h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Table */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .machine-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .machine-table th,
+        .machine-table td {
+            border: 1px solid #cfcfcf;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        .machine-table th {
+            background-color: #2f4050;
+            color: white;
+            font-weight: 600;
+        }
+
+    .machine-cell {
+        font-weight: 600;
+        background-color: #fafafa;
+        vertical-align: middle;
+    }
+
+    .asset-cell {
+        font-weight: 500;
+    }
+
+    .series-cell {
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* Status text */
+    .status-text {
+        font-size: 15px;
+        color: #555;
+    }
+
+    /* Hover effect */
+    .machine-table tbody tr:hover {
+        background-color: #f1f5f9;
+    }
+</style>
+
+@code {
+    private List<Machines>? machines;
+
+    protected override void OnInitialized()
+    {
+        machines = MachineService.GetAllMachines();
+    }
+    private void FileUpload()
+    {
+        Navigation.NavigateTo("upload");
+    }
+}

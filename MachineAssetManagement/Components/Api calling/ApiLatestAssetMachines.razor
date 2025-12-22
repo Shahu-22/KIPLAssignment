@@ -1,0 +1,49 @@
+﻿@page "/ApiLatest-series"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Machines Using Latest Series Assets</h5>
+        </div>
+        <div class="card-body">
+            @if (machines == null)
+            {
+                <p>Loading...</p>
+            }
+            else if (!machines.Any())
+            {
+                <div class="alert alert-warning">No machines found.</div>
+            }
+            else
+            {
+                <ul class="list-group">
+                    @foreach (var machine in machines)
+                    {
+                        <li class="list-group-item">@machine</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<string>? machines;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var url = $"{Navigation.BaseUri}api/machines/latest-series";
+            machines = await Http.GetFromJsonAsync<List<string>>(url);
+        }
+        catch
+        {
+            machines = new List<string>();
+        }
+    }
+}

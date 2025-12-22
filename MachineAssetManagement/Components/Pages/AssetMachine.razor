@@ -1,0 +1,78 @@
+﻿@page "/assets"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+@inject IAssetService AssetService
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Machines by Asset</h5>
+        </div>
+
+        <div class="card-body">
+            <!-- Input Row -->
+            <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label class="form-label">Asset Name</label>
+                    <input class="form-control"
+                           placeholder="Enter asset name (e.g., Cutter head)"
+                           @bind="assetInput" />
+                </div>
+
+                <div class="col-md-3">
+                    <button class="btn btn-primary w-100"
+                            @onclick="LoadMachines">
+                        Get Machines
+                    </button>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Result Section -->
+            @if (machines != null)
+            {
+                <h6>Asset: <strong>@selectedAsset</strong></h6>
+
+                @if (!machines.Any())
+                {
+                    <div class="alert alert-warning mt-3">
+                        No machines found for this asset.
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group mt-3">
+                        @foreach (var machine in machines)
+                        {
+                            <li class="list-group-item">
+                                @machine
+                            </li>
+                        }
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string assetInput = "";
+    private string selectedAsset = "";
+    private List<string>? machines;
+
+    private void LoadMachines()
+    {
+        if (string.IsNullOrWhiteSpace(assetInput))
+            return;
+
+        // Store selected asset for display
+        selectedAsset = assetInput;
+
+        // Fetch machines using this asset
+        machines = AssetService.GetMachinesByAsset(assetInput);
+
+        // Clear input field
+        assetInput = "";
+    }
+}

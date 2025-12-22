@@ -1,0 +1,65 @@
+﻿@page "/upload"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Data
+@using MachineAssetManagement.Models
+@inject IWebHostEnvironment Env
+
+<h3>Upload Matrix File</h3>
+
+<InputFile OnChange="UploadFile" />
+<br />
+<br />
+<label>
+    <input type="checkbox" @bind="replace" /> Replace existing matrix
+</label>
+
+<p>@message</p>
+
+@code {
+    private bool replace = true;
+    private string message = "";
+
+    private async Task UploadFile(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file == null)
+        {
+            message = "No file selected.";
+            return;
+        }
+        try
+        {
+            var tempPath = Path.GetTempFileName();
+            using (var stream = File.Create(tempPath))
+            {
+                await file.OpenReadStream().CopyToAsync(stream);
+            }
+            var ext = Path.GetExtension(file.Name).ToLower();
+            var parser = ParserFactory.GetParser(ext);
+            var machines = parser.ParseMachines(tempPath);
+            var lines = new List<string>();
+            foreach (var machine in machines)
+            {
+                foreach (var usage in machine.AssetUsage)
+                {
+                    lines.Add($"{machine.Name},{usage.Asset.Name},{usage.Series}");
+                }
+            }
+
+            var matrixFile = Path.Combine(Env.ContentRootPath, "Data", "Matrix.txt");
+            if (replace)
+            {
+                File.WriteAllLines(matrixFile, lines);
+            }
+            else
+            {
+                File.AppendAllLines(matrixFile, lines);
+            }
+            message = $"Upload Successful! {lines.Count} records saved.";
+        }
+        catch(Exception ex)
+        {
+            message = $"Upload failed: {ex.Message}";
+        }
+    }
+}

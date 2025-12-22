@@ -1,0 +1,81 @@
+﻿@page "/Apiassets"
+@rendermode InteractiveServer
+@using MachineAssetManagement.Services
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Machines by Asset</h5>
+        </div>
+
+        <div class="card-body">
+            <!-- Input Row -->
+            <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label class="form-label">Asset Name</label>
+                    <input class="form-control"
+                           placeholder="Enter asset name (e.g., Cutter head)"
+                           @bind="assetInput" />
+                </div>
+
+                <div class="col-md-3">
+                    <button class="btn btn-primary w-100"
+                            @onclick="LoadMachines">
+                        Get Machines
+                    </button>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Result Section -->
+            @if (machines != null)
+            {
+                <h6>Asset: <strong>@selected</strong></h6>
+
+                @if (!machines.Any())
+                {
+                    <div class="alert alert-warning mt-3">
+                        No machines found for this asset.
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group mt-3">
+                        @foreach (var machine in machines)
+                        {
+                            <li class="list-group-item">
+                                @machine
+                            </li>
+                        }
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string assetInput = "";
+    private string selected = "";
+    private List<string>? machines;
+
+    private async Task LoadMachines()
+    {
+        selected = assetInput;
+
+        try
+        {
+            var url = $"{Navigation.BaseUri}api/assets/{assetInput}/machines";
+            machines = await Http.GetFromJsonAsync<List<string>>(url);
+        }
+        catch
+        {
+            machines = new List<string>();
+        }
+
+        assetInput = "";
+    }
+}

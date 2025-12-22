@@ -1,0 +1,76 @@
+﻿@page "/Apimachine"
+@rendermode InteractiveServer
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Assets by Machine</h5>
+        </div>
+
+        <div class="card-body">
+            <div class="row g-2 align-items-end">
+                <div class="col-md-6">
+                    <label class="form-label">Machine Name</label>
+                    <input class="form-control"
+                           placeholder="Example: C300"
+                           @bind="machineInput" />
+                </div>
+
+                <div class="col-md-3">
+                    <button class="btn btn-primary w-100"
+                            @onclick="LoadAssets">
+                        Get Assets
+                    </button>
+                </div>
+            </div>
+
+            <hr />
+
+            @if (assets != null)
+            {
+                <h6>Machine: <strong>@selectedMachine</strong></h6>
+
+                @if (!assets.Any())
+                {
+                    <div class="alert alert-warning mt-3">
+                        No assets found.
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group mt-2">
+                        @foreach (var asset in assets)
+                        {
+                            <li class="list-group-item">@asset</li>
+                        }
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string machineInput = "";
+    private string selectedMachine = "";
+    private List<string>? assets;
+
+    private async Task LoadAssets()
+    {
+        selectedMachine = machineInput;
+
+        try
+        {
+            var url = $"{Navigation.BaseUri}api/machines/{machineInput}/assets";
+            assets = await Http.GetFromJsonAsync<List<string>>(url);
+        }
+        catch
+        {
+            assets = new List<string>();
+        }
+
+        machineInput = "";
+    }
+}

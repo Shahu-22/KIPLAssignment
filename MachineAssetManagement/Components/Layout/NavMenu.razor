@@ -1,0 +1,41 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Machine Management</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Api-allMachines">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> All Machines
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Apimachine">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span>Machines
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Apiassets">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Assets
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Apilatest-series">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Latest Series
+            </NavLink>
+        </div>
+    </nav>
+</div>
+

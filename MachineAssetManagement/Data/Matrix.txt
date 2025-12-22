@@ -1,0 +1,9 @@
+C310,Cutter head,S6
+C310,Blade safety cover,S10
+C310,Deburring blades,S6
+C45,Cutter head,S7
+C45,Blade safety cover,S11
+C60,Blade safety cover,S11
+C60,Cutter head,S8
+C60,Clamping fixture,S2
+C40,Shutter gripper,S3

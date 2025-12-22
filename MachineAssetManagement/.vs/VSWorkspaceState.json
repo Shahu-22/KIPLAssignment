@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Components",
+    "\\Controllers",
+    "\\Data",
+    "\\Models",
+    "\\Properties",
+    "\\Services",
+    "\\wwwroot"
+  ],
+  "SelectedNode": "\\Components\\MachineAssets.razor",
+  "PreviewInSolutionExplorer": false
+}
