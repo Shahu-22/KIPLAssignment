@@ -1,6 +1,7 @@
 ﻿@page "/machine"
 @rendermode InteractiveServer
 @using MachineAssetManagement.Services
+@using MachineAssetManagement.Models
 @inject IMachineService MachineService
 
 <div class="container mt-4">
@@ -63,7 +64,8 @@
     private List<string>? assets;
     private bool isLoading = false;
     private string? errorMessage;
-
+    private List<string> machinesNames;
+   
     private void LoadAssets()
     {
         selected = machineName;

@@ -15,24 +15,41 @@ namespace MachineAssetManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upload(IFormFile file, bool replace = true)
+        public IActionResult Upload([FromForm] IFormFile file, [FromQuery] bool replace = true)
         {
             if (file == null || file.Length == 0)
-                return BadRequest("File is required");
+                return BadRequest(new { message = "File is required" });
 
-            var tempPath = Path.GetTempFileName();
-            var extension = Path.GetExtension(file.FileName);
+            var tempPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid() + Path.GetExtension(file.FileName));
 
-            var uploadPath = Path.ChangeExtension(tempPath, extension);
-
-            using (var stream = System.IO.File.Create(uploadPath))
+            try
             {
-                file.CopyTo(stream);
+                using (var stream = System.IO.File.Create(tempPath))
+                {
+                    file.CopyTo(stream);
+                }
+
+                _uploadService.SaveMatrix(tempPath, replace);
+
+                return Ok(new { message = "Matrix updated successfully" });
             }
-
-            _uploadService.SaveMatrix(uploadPath, replace);
-
-            return Ok("Matrix updated successfully");
+            catch (NotSupportedException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (FormatException ex)
+            {
+                return BadRequest(new { message = $"File format error: {ex.Message}" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = $"Server error: {ex.Message}" });
+            }
+            finally
+            {
+                if (System.IO.File.Exists(tempPath))
+                    System.IO.File.Delete(tempPath);
+            }
         }
     }
 }

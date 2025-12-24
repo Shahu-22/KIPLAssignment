@@ -11,7 +11,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3 class="mb-0">All Machines & Assets</h3>
 
-            <button type="button" class="btn btn-primary" @onclick="FileUpload">
+            <button type="button" class="btn btn-primary" @onclick="ShowUploadModal">
                 Upload New Data
             </button>
         </div>
@@ -40,10 +40,10 @@
                         <tbody>
                             @foreach (var machine in machines)
                             {
-                                var rowSpan = machine.AssetUsage.Count;
+                                var rowSpan = machine.Assets.Count;
                                 bool first = true;
 
-                                foreach (var usage in machine.AssetUsage)
+                                foreach (var usage in machine.Assets)
                                 {
                                     <tr>
                                         @if (first)
@@ -53,8 +53,8 @@
                                             </td>
                                             first = false;
                                         }
-                                        <td class="asset-cell">@usage.Asset.Name</td>
-                                        <td class="series-cell">@usage.Series</td>
+                                        <td class="asset-cell">@usage.Key</td>
+                                        <td class="series-cell">@usage.Value</td>
                                     </tr>
                                 }
                             }
@@ -66,7 +66,9 @@
         </div>
     </div>
 </div>
-
+<UploadModal IsVisible="@showUploadModal"
+             OnClose="CloseUploadModal"
+             OnUploadCompleted="RefreshData" />
 <style>
     .page-container {
         max-width: 1200px;
@@ -149,13 +151,24 @@
 
 @code {
     private List<Machines>? machines;
-
+    private bool showUploadModal = false;
     protected override void OnInitialized()
     {
         machines = MachineService.GetAllMachines();
     }
-    private void FileUpload()
+    private void ShowUploadModal()
     {
-        Navigation.NavigateTo("upload");
+        showUploadModal = true;
+    }
+
+    private void CloseUploadModal()
+    {
+        showUploadModal = false;
+    }
+
+    private void RefreshData()
+    {
+        machines = MachineService.GetAllMachines();
+        showUploadModal = false;
     }
 }

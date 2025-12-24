@@ -1,7 +1,7 @@
 ﻿@page "/assets"
 @rendermode InteractiveServer
 @using MachineAssetManagement.Services
-@inject IAssetService AssetService
+@inject IMachineService MachineService
 
 <div class="container mt-5">
     <div class="card shadow-sm">
@@ -70,7 +70,7 @@
         selectedAsset = assetInput;
 
         // Fetch machines using this asset
-        machines = AssetService.GetMachinesByAsset(assetInput);
+        machines = MachineService.GetMachinesByAsset(assetInput);
 
         // Clear input field
         assetInput = "";

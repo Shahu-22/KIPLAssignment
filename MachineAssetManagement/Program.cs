@@ -1,4 +1,4 @@
-using MachineAssetManagement.Components;
+﻿using MachineAssetManagement.Components;
 using MachineAssetManagement.Data;
 using MachineAssetManagement.Services;
 
@@ -14,41 +14,41 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // HttpClient
-builder.Services.AddHttpClient("ApiClient", client =>
-{
-    client.BaseAddress = new Uri(
-        builder.Configuration["ApiSettings:BaseUrl"]);
-});
+builder.Services.AddHttpClient();
 
-// Data layer
-builder.Services.AddSingleton<IDataParser, TxtParser>();
-builder.Services.AddSingleton<Repository>();
+// Parsers
+builder.Services.AddSingleton<TxtParser>();
+builder.Services.AddSingleton<JsonParser>();
+builder.Services.AddSingleton<ParserFactory>();
 
-// Services
+// Resolve Matrix file path ONCE
+var dataFilePath =
+    builder.Configuration.GetValue<string>("DataSettings:MatrixFilePath")
+    ?? Path.Combine(builder.Environment.ContentRootPath, "Data", "Matrix.txt");
+
+// Make absolute path
+dataFilePath = Path.Combine(
+    builder.Environment.ContentRootPath,
+    dataFilePath
+);
+
+// Register services that NEED the path
+builder.Services.AddScoped<MatrixFileService>(sp =>
+    new MatrixFileService(dataFilePath));
+
 builder.Services.AddScoped<IMachineService>(sp =>
-{
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
-    var filePath = Path.Combine(env.ContentRootPath, "Data", "Matrix.txt");
+    new MachineService(
+        sp.GetRequiredService<ParserFactory>(),
+        dataFilePath
+    ));
 
-    return new MachineService(
-        sp.GetRequiredService<Repository>(),
-        filePath
-    );
-});
-builder.Services.AddSingleton<MatrixFileService>();
+//builder.Services.AddScoped<IAssetService>(sp =>
+//    new AssetService(
+//        sp.GetRequiredService<ParserFactory>(),
+//        dataFilePath
+//    ));
+
 builder.Services.AddScoped<UploadService>();
-
-
-builder.Services.AddScoped<IAssetService>(sp =>
-{
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
-    var filePath = Path.Combine(env.ContentRootPath, "Data", "Matrix.txt");
-
-    return new AssetService(
-        sp.GetRequiredService<Repository>(),
-        filePath
-    );
-});
 
 var app = builder.Build();
 
@@ -62,7 +62,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAntiforgery();
 
-// Map API + Blazor
+// Endpoints
 app.MapControllers();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()

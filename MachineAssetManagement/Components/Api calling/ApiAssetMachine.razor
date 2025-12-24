@@ -11,7 +11,6 @@
         </div>
 
         <div class="card-body">
-            <!-- Input Row -->
             <div class="row g-3 align-items-end">
                 <div class="col-md-6">
                     <label class="form-label">Asset Name</label>
@@ -30,7 +29,6 @@
 
             <hr />
 
-            <!-- Result Section -->
             @if (machines != null)
             {
                 <h6>Asset: <strong>@selected</strong></h6>
@@ -61,6 +59,7 @@
     private string assetInput = "";
     private string selected = "";
     private List<string>? machines;
+    private string err = string.Empty;
 
     private async Task LoadMachines()
     {
@@ -68,12 +67,13 @@
 
         try
         {
-            var url = $"{Navigation.BaseUri}api/assets/{assetInput}/machines";
+            var url = $"{Navigation.BaseUri}api/machines/{assetInput}/machine";
             machines = await Http.GetFromJsonAsync<List<string>>(url);
         }
-        catch
+        catch (Exception ex)
         {
             machines = new List<string>();
+            err = ex.Message;
         }
 
         assetInput = "";

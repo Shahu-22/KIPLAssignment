@@ -9,16 +9,12 @@ namespace MachineAssetManagement.Data
             ValidateFile(filePath);
 
             var machineDict = new Dictionary<string, Machines>();
-            var assetDict = new Dictionary<string, Asset>();
-
             int lineNo = 0;
 
             foreach (var line in File.ReadLines(filePath))
             {
                 lineNo++;
-
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
+                if (string.IsNullOrWhiteSpace(line)) continue;
 
                 var parts = line.Split(',');
                 if (parts.Length != 3)
@@ -31,20 +27,17 @@ namespace MachineAssetManagement.Data
                 if (!IsValidSeries(series))
                     throw new FormatException($"Invalid series '{series}' at line {lineNo}");
 
-                if (!assetDict.ContainsKey(assetName))
-                    assetDict[assetName] = new Asset { Name = assetName };
-
-                assetDict[assetName].AddSeries(series);
-
                 if (!machineDict.ContainsKey(machineName))
                     machineDict[machineName] = new Machines { Name = machineName };
 
-                machineDict[machineName]
-                    .AddAssetUsage(new AssetUsage(assetDict[assetName], series));
+                machineDict[machineName].AddAsset(assetName, series);
+
+                
             }
 
             return machineDict.Values.ToList();
         }
+
 
         public override List<Asset> ParseAssets(string filePath)
         {
@@ -71,5 +64,6 @@ namespace MachineAssetManagement.Data
             }
             return assetDict.Values.ToList();
         }
+        
     }
 }

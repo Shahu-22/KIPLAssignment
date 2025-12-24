@@ -1,3 +1,80 @@
-*/obj
-*obj
-*bin
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Build results
+# =========================
+bin/
+obj/
+out/
+
+# =========================
+# ASP.NET Core
+# =========================
+appsettings.Development.json
+appsettings.Local.json
+
+# IIS / Kestrel
+*.log
+
+# =========================
+# User-specific files
+# =========================
+*.rsuser
+*.sln.ide
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+packages/
+.nuget/
+.nuget/packages/
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Temporary / Upload files
+# =========================
+Data/Matrix.txt
+wwwroot/uploads/
+wwwroot/temp/
+*.tmp
+
+# =========================
+# Secrets
+# =========================
+secrets.json
+
+# =========================
+# Rider / VS Code
+# =========================
+.idea/
+.vscode/
+*.code-workspace
+
+# =========================
+# Test results
+# =========================
+TestResults/
+
+# =========================
+# Entity Framework
+# =========================
+Migrations/*.csproj
+
+# =========================
+# Publish output
+# =========================
+publish/

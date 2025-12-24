@@ -1,0 +1,450 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pati_Sha1\\source\\repos\\BlazorApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\uploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\data\\matrix.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\data\\parserfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\data\\txtparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\uploadmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\machineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\models\\machines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\models\\assetusage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\models\\asset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\imachineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\assetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\allmachines.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\latestassetmachines.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\matrixfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\api calling\\apiassetmachine.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\api calling\\apimachineasset.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\api calling\\fileupload.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\api calling\\apilatestassetmachines.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\pages\\assetmachine.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\services\\iassetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\machineassets.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B57D7B26-F5BB-4E77-B4C9-D0F33FAE65AD}|..\\MachineAssetManagement\\MachineAssetManagement.csproj|c:\\users\\pati_sha1\\source\\repos\\machineassetmanagement\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MachineService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\MachineService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\MachineService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\MachineService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\MachineService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T09:44:02.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\Repository.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Data\\Repository.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\Repository.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Data\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T04:53:34.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TxtParser.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\TxtParser.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Data\\TxtParser.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\TxtParser.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Data\\TxtParser.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowDAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T04:25:14.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ParserFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\ParserFactory.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Data\\ParserFactory.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\ParserFactory.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Data\\ParserFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T09:22:44.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Controllers\\UploadController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T09:59:41.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AssetService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\AssetService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\AssetService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\AssetService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\AssetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:35:10.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Machines.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\Machines.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Models\\Machines.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\Machines.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Models\\Machines.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T04:48:17.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UploadModal.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\UploadModal.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\UploadModal.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\UploadModal.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\UploadModal.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-23T04:54:10.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Matrix.txt",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\Matrix.txt",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Data\\Matrix.txt",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Data\\Matrix.txt",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Data\\Matrix.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-12-22T07:23:36.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UploadService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\UploadService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\UploadService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\UploadService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\UploadService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T09:38:28.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Program.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Program.cs*",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Program.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T05:17:49.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Asset.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\Asset.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Models\\Asset.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\Asset.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Models\\Asset.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T11:56:35.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AssetUsage.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\AssetUsage.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Models\\AssetUsage.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Models\\AssetUsage.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Models\\AssetUsage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T11:56:51.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AllMachines.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\AllMachines.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\AllMachines.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\AllMachines.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\AllMachines.razor",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T04:35:30.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IMachineService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\IMachineService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\IMachineService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\IMachineService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\IMachineService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T09:41:23.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LatestAssetMachines.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\LatestAssetMachines.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\LatestAssetMachines.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\LatestAssetMachines.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\LatestAssetMachines.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T07:11:52.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MatrixFileService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\MatrixFileService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\MatrixFileService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\MatrixFileService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\MatrixFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T09:31:31.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\appsettings.json",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\appsettings.json",
+              "RelativeToolTip": "..\\MachineAssetManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-22T05:15:05.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ApiAssetMachine.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiAssetMachine.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Api calling\\ApiAssetMachine.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiAssetMachine.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Api calling\\ApiAssetMachine.razor",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T07:01:41.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApiMachineAsset.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiMachineAsset.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Api calling\\ApiMachineAsset.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiMachineAsset.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Api calling\\ApiMachineAsset.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEEAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T06:11:46.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FileUpload.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\FileUpload.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Api calling\\FileUpload.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\FileUpload.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Api calling\\FileUpload.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T10:00:53.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApiLatestAssetMachines.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiLatestAssetMachines.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Api calling\\ApiLatestAssetMachines.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Api calling\\ApiLatestAssetMachines.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Api calling\\ApiLatestAssetMachines.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T07:10:05.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AssetMachine.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Pages\\AssetMachine.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Pages\\AssetMachine.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Pages\\AssetMachine.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Pages\\AssetMachine.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-23T11:17:03.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IAssetService.cs",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\IAssetService.cs",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Services\\IAssetService.cs",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Services\\IAssetService.cs",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Services\\IAssetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:33:43.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MachineAssets.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\MachineAssets.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\MachineAssets.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\MachineAssets.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\MachineAssets.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwEQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T05:40:05.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T06:13:02.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "..\\MachineAssetManagement\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Pati_Sha1\\source\\repos\\MachineAssetManagement\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "..\\MachineAssetManagement\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-22T11:29:41.889Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,31 +1,30 @@
-﻿namespace MachineAssetManagement.Models
+﻿public class Machines
 {
-    public class Machines
-    {
-      public string Name { get; set; }
-        public List<AssetUsage> AssetUsage { get; set; } =new List<AssetUsage>();
+    public string Name { get; set; } = "";
 
-        public void AddAssetUsage(AssetUsage usage)
-        {
-            AssetUsage.Add(usage);
-        }
-        //stroes assets and their series call AssetUsage constructor
-        public List<string> GetAssetNames()
-        {
-            return AssetUsage.Select(a=>a.Asset.Name).Distinct().ToList();
-        }
-        //check is asset uses latest series or not
-        public bool IsUsingLatestSeries(Dictionary<string, string> latestSeriesPerAsset)
-        {
-            foreach (var usage in AssetUsage)
-            {
-                if (!latestSeriesPerAsset.ContainsKey(usage.Asset.Name))
-                    return false;
-                if (usage.Series != latestSeriesPerAsset[usage.Asset.Name])
-                    return false;
-            }
-            return true;
-        }
+    // AssetName → Series
+    public Dictionary<string, string> Assets { get; set; } = new();
+
+    public void AddAsset(string assetName, string series)
+    {
+        Assets[assetName] = series;
     }
 
+    public List<string> GetAssetNames()
+    {
+        return Assets.Keys.ToList();
+    }
+
+    public bool IsUsingLatestSeries(Dictionary<string, string> latestAssetSeries)
+    {
+        foreach (var asset in Assets)
+        {
+            if (latestAssetSeries.TryGetValue(asset.Key, out var latest))
+            {
+                if (asset.Value != latest)
+                    return false;
+            }
+        }
+        return true;
+    }
 }

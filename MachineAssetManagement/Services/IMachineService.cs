@@ -7,5 +7,6 @@ namespace MachineAssetManagement.Services
         List<string> GetAssetsByMachine(string machineName);
         List<string> GetMachineWithLatestAsset();
         List<Machines> GetAllMachines();
+        List<string> GetMachinesByAsset(string assetName);
     }
 }

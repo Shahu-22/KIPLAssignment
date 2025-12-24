@@ -1,0 +1,28 @@
+﻿@page "/todo"
+@rendermode InteractiveServer
+<h3>Todo</h3>
+Completed : @CompleteCount Pending : @Pending <br>
+<input type="text" @bind="newtask" placeholder="Enter Task" />
+<button type="submit" @onclick="addTask">Add Task</button><br />
+@foreach(Task i in tasks)
+{   
+    <input type="checkbox" @bind="i.IsCompleted"/>@i.title.ToUpper()<br />
+}
+@code {
+    class Task
+    {
+        public string title { get; set; } = "";
+        public bool IsCompleted { get; set; }
+    }
+   private List<Task> tasks = new List<Task>();
+    string newtask = "";
+    bool done =false;
+    private void addTask()
+    {
+        if (newtask == "") return;
+        tasks.Add(new Task{title=newtask.Trim()});
+        newtask = "";
+    }
+    private int CompleteCount =>(from t in tasks where t.IsCompleted==true select t).Count();
+    private int Pending => (from t in tasks where t.IsCompleted == false select t).Count();
+}

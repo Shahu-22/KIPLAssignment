@@ -27,5 +27,11 @@ namespace MachineAssetManagement.Controllers
         {
             return Ok(_machineService.GetMachineWithLatestAsset()) ;
         }
+
+        [HttpGet("{name}/machine")]
+        public IActionResult GetMachines(string name)
+        {
+            return Ok(_machineService.GetMachinesByAsset(name));
+        }
     }
 }

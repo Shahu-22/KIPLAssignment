@@ -24,24 +24,17 @@ namespace MachineAssetManagement.Data
                 throw new FormatException("Invalid or empty JSON");
 
             var machineDict = new Dictionary<string, Machines>();
-            var assetDict = new Dictionary<string, Asset>();
+            var assetDict = new Dictionary<string, Asset>(); // Optional, if you need asset series globally
 
             foreach (var rec in records)
             {
                 if (!IsValidSeries(rec.Series))
                     throw new FormatException($"Invalid series '{rec.Series}'");
-
-                if (!assetDict.ContainsKey(rec.Asset))
-                    assetDict[rec.Asset] = new Asset { Name = rec.Asset };
-
-                assetDict[rec.Asset].AddSeries(rec.Series);
-
                 if (!machineDict.ContainsKey(rec.Machine))
                     machineDict[rec.Machine] = new Machines { Name = rec.Machine };
 
-                machineDict[rec.Machine].AddAssetUsage(
-                    new AssetUsage(assetDict[rec.Asset], rec.Series)
-                );
+                // Add directly to dictionary in Machines
+                machineDict[rec.Machine].AddAsset(rec.Asset, rec.Series);
             }
 
             return machineDict.Values.ToList();
@@ -49,19 +42,26 @@ namespace MachineAssetManagement.Data
 
         public override List<Asset> ParseAssets(string filePath)
         {
-            var machines = ParseMachines(filePath);
+            ValidateFile(filePath);
 
-            return machines
-                .SelectMany(m => m.AssetUsage)
-                .GroupBy(u => u.Asset.Name)
-                .Select(g =>
+            var machines = ParseMachines(filePath);
+            var assetDict = new Dictionary<string, Asset>();
+
+            foreach (var machine in machines)
+            {
+                foreach (var kvp in machine.Assets)
                 {
-                    var asset = new Asset { Name = g.Key };
-                    foreach (var u in g)
-                        asset.AddSeries(u.Series);
-                    return asset;
-                })
-                .ToList();
+                    var assetName = kvp.Key;
+                    var series = kvp.Value;
+
+                    if (!assetDict.ContainsKey(assetName))
+                        assetDict[assetName] = new Asset { Name = assetName };
+
+                    assetDict[assetName].AddSeries(series);
+                }
+            }
+
+            return assetDict.Values.ToList();
         }
     }
 }
