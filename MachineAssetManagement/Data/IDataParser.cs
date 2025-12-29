@@ -5,8 +5,8 @@ namespace MachineAssetManagement.Data
 {
     public interface IDataParser
     {
+        bool canHandle(string ext);
         List<Machines> ParseMachines(string filePath);
-        List<Asset> ParseAssets(string filePath);
     }
 }
 

@@ -4,53 +4,43 @@ using MachineAssetManagement.Services;
 
 public class MachineService : IMachineService
 {
-    private readonly ParserFactory _parserFactory;
-    private readonly string _filePath;
-
-    public MachineService(ParserFactory parserFactory, string filePath)
+    private readonly Repository _repo;
+    public MachineService(Repository repo)
     {
-        _parserFactory = parserFactory;
-        _filePath = filePath;
+        _repo = repo;
     }
 
+    //public List<Machines> machines => _repo.LoadMachines();
     public List<Machines> GetAllMachines()
     {
-        var parser = _parserFactory.GetParser(_filePath);
-        return parser.ParseMachines(_filePath);
+        return _repo.LoadMachines();
     }
-
     public List<string> GetAssetsByMachine(string machineName)
     {
-        var record = GetAllMachines();
-        
-        return record.Where(m => m.Name.Equals(machineName, StringComparison.OrdinalIgnoreCase))
-        .SelectMany(m => m.Assets.Keys)
-        .Distinct()
-        .ToList();
+        return _repo.LoadMachines()
+              .Where(m => m.Name.Equals(machineName, StringComparison.OrdinalIgnoreCase))
+              .SelectMany(m => m.Assets.Keys)
+              .Distinct()
+              .ToList();
 
     }
 
     public List<string> GetMachineWithLatestAsset()
     {
-       
-        var record = GetAllMachines();
-        var latestAssetSeries = record
+        var latestAssetSeries = _repo.LoadMachines()
                                 .SelectMany(m => m.Assets)         
                                 .GroupBy(a => a.Key)                
                                 .ToDictionary(
-                                g => g.Key,
-                                g => g.Max(x => x.Value)        
-                                );
-        var machinesUsingLatestAssets = record
-                                        .Where(m =>
-                                         m.Assets.All(asset =>
-                                         latestAssetSeries.TryGetValue(asset.Key, out var latest)
-                                         && asset.Value == latest
-                                         )
-                                         )
-                                        .Select(m => m.Name)
-                                        .Distinct()
-                                        .ToList();
+                                         g => g.Key,
+                                         g => g.Max(x => x.Value));
+        var machinesUsingLatestAssets = _repo.LoadMachines()
+                                  .Where
+                                        (m =>m.Assets.All(asset =>
+                                        latestAssetSeries
+                                        .TryGetValue(asset.Key, out var latest)
+                                        && asset.Value == latest))
+                                  .Select(m => m.Name)
+                                  .ToList();
 
     return machinesUsingLatestAssets;
 
@@ -59,10 +49,7 @@ public class MachineService : IMachineService
 
     public List<string> GetMachinesByAsset(string assetName)
     {
-        
-        var record = GetAllMachines();
-
-        return record
+        return _repo.LoadMachines()
         .Where(m => m.Assets.Keys
         .Any(k => string.Equals(k, assetName, StringComparison.OrdinalIgnoreCase)))
         .Select(m => m.Name)

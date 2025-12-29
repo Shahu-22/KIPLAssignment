@@ -1,0 +1,29 @@
+﻿@page "/file-loader"
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@rendermode InteractiveServer
+<h3>FileUploader</h3>
+<button type="button" class="btn btn-primary" @onclick="ShowUploadModal">
+    Upload New Data
+</button>
+<UploadModal IsVisible="@showUploadModal"
+             OnClose="CloseUploadModal"
+             OnUploadCompleted="RefreshData" />
+@code {
+    private bool showUploadModal = false;
+    private void ShowUploadModal()
+    {
+        showUploadModal = true;
+    }
+
+    private void CloseUploadModal()
+    {
+        showUploadModal = false;
+    }
+
+    private async Task RefreshData()
+    {
+        
+        showUploadModal = false;
+    }
+}

@@ -1,27 +1,10 @@
-C310,Cutter head,S6
-C310,Blade safety cover,S10
-C310,Deburring blades,S6
-C45,Cutter head,S8
-C45,Blade safety cover,S11
-C60,Blade safety cover,S11
-C60,Cutter head,S8
-C60,Clamping fixture,S2
-C40,Shutter gripper,S3
-C310,Cutter head,S6
-C310,Blade safety cover,S10
-C310,Deburring blades,S6
-C45,Cutter head,S8
-C45,Blade safety cover,S11
-C60,Blade safety cover,S11
-C60,Cutter head,S8
-C60,Clamping fixture,S2
-C40,Shutter gripper,S3
-C315,Cutter head,S6
-C315,Blade safety cover,S10
-C315,Deburring blades,S6
-C45,Cutter head,S8
-C45,Blade safety cover,S11
-C60,Blade safety cover,S11
-C60,Cutter head,S8
-C60,Clamping fixture,S2
-C40,Shutter gripper,S3
+C300,Cutter head,S6
+C300,Blade safety cover,S10
+C300,Deburring blades,S6
+C50,Cutter head,S8
+C50,Blade safety cover,S11
+C45,Blade safety cover,S10
+C65,Blade safety cover,S11
+C65,Cutter head,S8
+C65,Clamping fixture,S2
+C70,Shutter gripper,S3

@@ -7,9 +7,6 @@
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
   <ItemGroup>
-	  <Content Include="Data\Matrix.txt">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
     <Compile Remove="wwwroot\NewFolder1\**" />
     <Compile Remove="wwwroot\NewFolder\**" />
     <Content Remove="wwwroot\NewFolder1\**" />

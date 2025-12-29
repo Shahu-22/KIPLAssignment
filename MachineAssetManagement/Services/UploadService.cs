@@ -6,12 +6,12 @@ namespace MachineAssetManagement.Services
     public class UploadService
     {
         private readonly MatrixFileService _fileService;
-        private readonly ParserFactory _parserFactory;
+        private readonly IEnumerable<IDataParser> _parsers;
 
-        public UploadService(MatrixFileService fileService, ParserFactory parserFactory)
+        public UploadService(MatrixFileService fileService, IEnumerable<IDataParser> parsers)
         {
             _fileService = fileService;
-            _parserFactory = parserFactory;
+            _parsers = parsers;
         }
 
         public void SaveMatrix(string uploadedFilePath, bool replace = true)
@@ -20,10 +20,12 @@ namespace MachineAssetManagement.Services
                 throw new ArgumentException("Invalid file path");
 
             // Get parser dynamically based on file extension
-            var parser = _parserFactory.GetParser(uploadedFilePath);
+            var extension = Path.GetExtension(uploadedFilePath).ToLowerInvariant();
+            var parser = _parsers.FirstOrDefault(p => p.canHandle(extension)) ??
+           throw new NotSupportedException($"No parser registered");
 
             // Parse uploaded file
-            var machines = parser.ParseMachines(uploadedFilePath);
+            var machines =  parser.ParseMachines(uploadedFilePath);
 
             // Convert parsed data to matrix.txt format
             var lines = new List<string>();
@@ -37,7 +39,7 @@ namespace MachineAssetManagement.Services
 
             // Save to Matrix.txt using MatrixFileService
             if (replace)
-                _fileService.ReplaceFile(lines);
+              _fileService.ReplaceFile(lines);
             else
                 _fileService.AppendFile(lines);
         }

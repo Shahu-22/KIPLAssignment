@@ -10,21 +10,6 @@
         Assets[assetName] = series;
     }
 
-    public List<string> GetAssetNames()
-    {
-        return Assets.Keys.ToList();
-    }
+    
 
-    public bool IsUsingLatestSeries(Dictionary<string, string> latestAssetSeries)
-    {
-        foreach (var asset in Assets)
-        {
-            if (latestAssetSeries.TryGetValue(asset.Key, out var latest))
-            {
-                if (asset.Value != latest)
-                    return false;
-            }
-        }
-        return true;
-    }
 }

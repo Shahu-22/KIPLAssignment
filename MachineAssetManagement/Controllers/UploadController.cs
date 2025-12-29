@@ -15,7 +15,7 @@ namespace MachineAssetManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upload([FromForm] IFormFile file, [FromQuery] bool replace = true)
+        public IActionResult Upload(IFormFile file,  bool replace = true)
         {
             if (file == null || file.Length == 0)
                 return BadRequest(new { message = "File is required" });

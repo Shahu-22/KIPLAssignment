@@ -1,10 +1,8 @@
 ﻿@page "/Api-allMachines"
 @rendermode InteractiveServer
 @using MachineAssetManagement.Models
-@using MachineAssetManagement.Services
-@inject IMachineService MachineService
 @inject NavigationManager Navigation
-
+@inject HttpClient Http
 <div class="page-container">
 
     <div class="card">
@@ -154,9 +152,17 @@
    
     private List<Machines>? machines;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        machines = MachineService.GetAllMachines();
+        try
+        {
+            var url = $"{Navigation.BaseUri}api/machines/all-machines";
+            machines= await Http.GetFromJsonAsync<List<Machines>>(url);
+        }
+        catch
+        {
+            machines = new List<Machines>();
+        }
     }
     private bool showUploadModal = false;
     private void ShowUploadModal()
@@ -169,9 +175,17 @@
         showUploadModal = false;
     }
 
-    private void RefreshData()
+    private async Task RefreshData()
     {
-        machines = MachineService.GetAllMachines();
+        try
+        {
+            var url = $"{Navigation.BaseUri}api/machines/all-machines";
+            machines = await Http.GetFromJsonAsync<List<Machines>>(url);
+        }
+        catch
+        {
+            machines = new List<Machines>();
+        }
         showUploadModal = false;
     }
 }

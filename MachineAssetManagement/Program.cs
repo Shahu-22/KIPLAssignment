@@ -1,58 +1,48 @@
 ﻿using MachineAssetManagement.Components;
 using MachineAssetManagement.Data;
 using MachineAssetManagement.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Razor / Blazor
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-// Web API
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// HttpClient
+
 builder.Services.AddHttpClient();
 
-// Parsers
-builder.Services.AddSingleton<TxtParser>();
-builder.Services.AddSingleton<JsonParser>();
-builder.Services.AddSingleton<ParserFactory>();
 
-// Resolve Matrix file path ONCE
+
 var dataFilePath =
     builder.Configuration.GetValue<string>("DataSettings:MatrixFilePath")
-    ?? Path.Combine(builder.Environment.ContentRootPath, "Data", "Matrix.txt");
+    ?? Path.Combine(builder.Environment.ContentRootPath, "Data", "Matrix.txt");;
 
-// Make absolute path
-dataFilePath = Path.Combine(
-    builder.Environment.ContentRootPath,
-    dataFilePath
-);
-
-// Register services that NEED the path
 builder.Services.AddScoped<MatrixFileService>(sp =>
-    new MatrixFileService(dataFilePath));
+{
+    return new MatrixFileService(dataFilePath);
+});
 
-builder.Services.AddScoped<IMachineService>(sp =>
-    new MachineService(
-        sp.GetRequiredService<ParserFactory>(),
-        dataFilePath
-    ));
+builder.Services.AddScoped<IMachineService,MachineService>();
 
-//builder.Services.AddScoped<IAssetService>(sp =>
-//    new AssetService(
-//        sp.GetRequiredService<ParserFactory>(),
-//        dataFilePath
-//    ));
+builder.Services.AddSingleton<IDataParser, JsonParser>();
+builder.Services.AddSingleton<IDataParser, TxtParser>();
+builder.Services.AddSingleton<Repository>(sp =>
+{
+    var parsers = sp.GetRequiredService<IEnumerable<IDataParser>>(); 
+    return new Repository(parsers, dataFilePath);
+});
+
+
 
 builder.Services.AddScoped<UploadService>();
 
 var app = builder.Build();
 
-// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -62,7 +52,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAntiforgery();
 
-// Endpoints
+
 app.MapControllers();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
