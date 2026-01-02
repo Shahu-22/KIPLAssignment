@@ -4,13 +4,12 @@ using MachineAssetManagement.Services;
 
 public class MachineService : IMachineService
 {
-    private readonly Repository _repo;
-    public MachineService(Repository repo)
+    private readonly IRepository _repo;
+    public MachineService(IRepository repo)
     {
         _repo = repo;
     }
 
-    //public List<Machines> machines => _repo.LoadMachines();
     public List<Machines> GetAllMachines()
     {
         return _repo.LoadMachines();

@@ -7,11 +7,11 @@ namespace MachineAssetManagement.Controllers
     [Route("api/upload")]
     public class UploadController : ControllerBase
     {
-        private readonly UploadService _uploadService;
+        private readonly IDataLoader _dataLoader;
 
-        public UploadController(UploadService uploadService)
+        public UploadController(IDataLoader dataLoader)
         {
-            _uploadService = uploadService;
+            _dataLoader = dataLoader;
         }
 
         [HttpPost]
@@ -29,7 +29,7 @@ namespace MachineAssetManagement.Controllers
                     file.CopyTo(stream);
                 }
 
-                _uploadService.SaveMatrix(tempPath, replace);
+                _dataLoader.SaveMatrix(tempPath, replace);
 
                 return Ok(new { message = "Matrix updated successfully" });
             }
